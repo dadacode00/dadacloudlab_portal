@@ -70,7 +70,10 @@ const convertMarkdownToHtml = async (markdown) => {
       document.head.appendChild(script);
     });
   }
-  return marked.parse(markdown);
+  return marked.parse(markdown, {
+    breaks: true, // 엔터 한 번으로 줄바꿈(<br>)이 되도록 설정
+    gfm: true     // GitHub Flavored Markdown 활성화
+  });
 };
 
 const loadServices = async () => {
