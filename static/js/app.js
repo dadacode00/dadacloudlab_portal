@@ -159,29 +159,3 @@ const renderServiceDetail = async () => {
 
 renderServiceLists().catch((error) => console.error(error));
 renderServiceDetail().catch((error) => console.error(error));
-
-const initTabSwitcher = () => {
-  const triggers = document.querySelectorAll(".tab-trigger");
-  triggers.forEach((trigger) => {
-    trigger.addEventListener("click", () => {
-      const target = trigger.dataset.target;
-
-      // 모든 트리거 비활성화
-      triggers.forEach((t) => t.classList.remove("active"));
-      trigger.classList.add("active");
-
-      // 모든 콘텐츠 비활성화
-      document.querySelectorAll(".tab-content").forEach((content) => {
-        content.classList.remove("active");
-      });
-
-      // 선택한 콘텐츠 활성화
-      const activeContent = document.getElementById(`tab-${target}`);
-      if (activeContent) {
-        activeContent.classList.add("active");
-      }
-    });
-  });
-};
-
-initTabSwitcher();

@@ -8,7 +8,7 @@
   --line: #e2e2df;          /* 얇은 그리드 실선 */
   --primary: #131313;
   --primary-dark: #333333;
-  --accent: #2e6ff2;        /* 포인트 블루 (제한적으로만 사용) */
+  --accent: #2e6ff2;        /* 포인트 블루 */
   --accent-2: #10b981;
   --shadow: none;           /* 미니멀 감성을 위해 그림자 완전히 제거 */
 }
@@ -45,7 +45,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  min-height: 80px;
+  min-height: 72px;         /* 80px에서 72px로 콤팩트화 */
   border-bottom: 1px solid var(--line);
   background: rgba(247, 247, 245, 0.88);
   backdrop-filter: blur(20px);
@@ -65,15 +65,15 @@ a {
 
 .brand {
   font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
+  font-size: 1rem;          /* 1.15rem에서 1rem으로 축소 */
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .site-nav a {
   color: var(--muted);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.78rem;       /* 0.9rem에서 0.78rem으로 축소 */
   text-transform: uppercase;
   letter-spacing: 0.08em;
   transition: color 0.2s ease;
@@ -93,13 +93,13 @@ a {
   margin: 0 auto;
 }
 
-/* 시안의 광활하고 간결한 Hero 타이틀 영역 */
+/* 히어로 영역 비율 최적화 */
 .hero {
   display: flex;
-  min-height: 55svh;
+  min-height: 50svh;
   flex-direction: column;
   justify-content: center;
-  padding: 80px 0;
+  padding: 64px 0;          /* 패딩 축소 */
 }
 
 .hero h1,
@@ -107,7 +107,7 @@ a {
 .not-found h1 {
   margin: 0;
   max-width: 960px;
-  font-size: clamp(3.2rem, 9.5vw, 7.5rem);
+  font-size: clamp(2.8rem, 8vw, 5.8rem); /* 제목 폰트 스케일 축소 */
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.04em;
@@ -115,18 +115,18 @@ a {
 }
 
 .hero-text {
-  max-width: 620px;
-  margin: 32px 0 0;
+  max-width: 580px;
+  margin: 28px 0 0;
   color: var(--muted);
-  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem); /* 본문 폰트 비율 축소 */
   font-weight: 500;
   line-height: 1.5;
 }
 
 .eyebrow {
-  margin: 0 0 16px;
+  margin: 0 0 12px;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.75rem;       /* 0.8rem에서 0.75rem으로 축소 */
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -138,25 +138,25 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 32px;
+  margin-top: 24px;
 }
 
-/* 미니멀 버튼 스타일 */
+/* 버튼 컴팩트 스케일 조정 */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: 0 20px;
+  min-height: 38px;         /* 44px에서 38px로 축소 */
+  padding: 0 16px;          /* 20px에서 16px로 축소 */
   border: 1px solid var(--line);
   border-radius: 0px;
   background: transparent;
   color: var(--text);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.75rem;       /* 0.85rem에서 0.75rem으로 축소 */
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  letter-spacing: 0.06em;
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .button.primary {
@@ -180,9 +180,9 @@ a {
   border-color: var(--primary-dark);
 }
 
-/* 섹션 패딩 및 보더 정의 */
+/* 섹션 패딩 조정 */
 .section {
-  padding: 96px 0;
+  padding: 80px 0;          /* 96px에서 80px로 축소 */
   border-top: 1px solid var(--line);
 }
 
@@ -193,7 +193,7 @@ a {
 
 .section-heading,
 .page-heading {
-  padding: 64px 0 40px;
+  padding: 48px 0 32px;
 }
 
 .section-heading h2,
@@ -203,20 +203,14 @@ a {
 
 .section-heading h2 {
   max-width: 800px;
-  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-size: clamp(1.8rem, 4vw, 3rem); /* 타이틀 크기 조정 */
   font-weight: 800;
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: -0.03em;
 }
 
-.page-heading p {
-  max-width: 760px;
-  color: var(--muted);
-  font-size: 1.1rem;
-}
-
-/* 그리드 레이아웃: 시안처럼 보더가 맞닿는 칼선 효과 */
+/* 그리드 레이아웃 */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -225,13 +219,13 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
-/* 시안을 반영한 미니멀 카드 스타일 */
+/* 미니멀 카드 디테일 조정 */
 .product-card {
   display: flex;
   min-height: 100%;
   flex-direction: column;
   border: none;
-  border-radius: 0px; /* 직각 디자인 */
+  border-radius: 0px;
   background: var(--surface);
 }
 
@@ -258,20 +252,20 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .product-card-meta-title {
-  font-size: 0.95rem;
+  font-size: 0.85rem;       /* 0.95rem에서 0.85rem으로 축소 */
   font-weight: 800;
   color: var(--text);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   margin-bottom: 0 !important;
 }
 
 .product-card-meta-desc {
-  font-size: 0.82rem;
+  font-size: 0.78rem;       /* 0.82rem에서 0.78rem으로 축소 */
   color: var(--muted);
   line-height: 1.5;
 }
@@ -281,26 +275,27 @@ a {
   flex-wrap: wrap;
   gap: 10px;
   padding: 0 28px 28px 28px;
-  margin-top: auto; /* 내용 길이에 상관없이 버튼들을 카드 최하단에 고정 */
+  margin-top: auto;
 }
 
+/* 롤백/복원된 둥글고 은은한 파란 뱃지 스케일 축소 */
 .status {
   display: inline-flex;
-  min-height: 24px;
+  min-height: 20px;         /* 24px에서 20px로 컴팩트화 */
   align-items: center;
-  padding: 0 12px;
-  border-radius: 999px;                       /* 예전 둥근 디자인 복원 */
-  border: 1px solid rgba(46, 111, 242, 0.25); /* 은은한 블루 테두리 */
-  background: rgba(46, 111, 242, 0.06);     /* 은은한 블루 배경 */
-  color: #2e6ff2;                            /* 파란색 글씨 적용 */
-  font-size: 0.72rem;
+  padding: 0 8px;           /* 패딩 축소 */
+  border-radius: 999px;
+  border: 1px solid rgba(46, 111, 242, 0.22);
+  background: rgba(46, 111, 242, 0.05);
+  color: #2e6ff2;
+  font-size: 0.65rem;       /* 0.72rem에서 0.65rem으로 축소 */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   white-space: nowrap;
 }
 
-/* 시안의 'OUR APPROACH' 2열 대형 레이아웃 */
+/* ABOUT DADA 레이아웃 통합 */
 .approach-layout {
   display: grid;
   grid-template-columns: 1fr 1.6fr;
@@ -309,32 +304,49 @@ a {
 
 .approach-heading h2 {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 1.8rem;        /* 2.2rem에서 1.8rem으로 축소 */
   font-weight: 800;
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
 .approach-copy p {
-  margin: 0 0 32px;
+  margin: 0;
   color: var(--muted);
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-size: 1.05rem;       /* 1.15rem에서 1.05rem으로 축소 */
+  line-height: 1.65;
 }
 
-.approach-link {
+.about-grid-wrapper {
+  margin-top: 56px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.about-cell {
+  background: var(--surface);
+  padding: 40px;            /* 48px에서 40px로 축소 */
+}
+
+.about-cell h3 {
+  margin: 0 0 12px;
+  font-size: 0.95rem;       /* 1.1rem에서 0.95rem으로 축소 */
   font-weight: 800;
-  font-size: 0.9rem;
+  letter-spacing: 0.05em;
   color: var(--text);
-  letter-spacing: 0.08em;
-  border-bottom: 1px solid var(--text);
-  padding-bottom: 4px;
-  display: inline-block;
-  transition: opacity 0.2s ease;
 }
 
-.approach-link:hover {
-  opacity: 0.7;
+.about-cell p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;       /* 0.95rem에서 0.82rem으로 축소 */
+  line-height: 1.65;
 }
 
 .contact-wrap {
@@ -343,7 +355,7 @@ a {
 
 .contact-wrap h2 {
   margin: 8px 0 0;
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem); /* 폰트 스케일 축소 */
   font-weight: 800;
   letter-spacing: -0.02em;
 }
@@ -358,7 +370,7 @@ a {
 
 .detail-aside {
   position: sticky;
-  top: 120px;
+  top: 104px;
   align-self: start;
 }
 
@@ -377,7 +389,7 @@ a {
 
 .service-meta h1 {
   margin: 16px 0 0;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -387,7 +399,7 @@ a {
   border: 1px solid var(--line);
   border-radius: 0px;
   background: var(--surface);
-  padding: clamp(32px, 6vw, 64px);
+  padding: clamp(28px, 5vw, 56px);
 }
 
 .markdown-body h1,
@@ -401,13 +413,13 @@ a {
 
 .markdown-body h1 {
   margin-top: 0;
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   text-transform: uppercase;
 }
 
 .markdown-body h2 {
-  margin-top: 48px;
-  font-size: 1.5rem;
+  margin-top: 40px;
+  font-size: 1.35rem;
   border-bottom: 1px solid var(--line);
   padding-bottom: 8px;
 }
@@ -416,8 +428,8 @@ a {
 .markdown-body li {
   color: var(--text);
   opacity: 0.85;
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 .markdown-body ul {
@@ -425,7 +437,7 @@ a {
 }
 
 .markdown-body li {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .markdown-body code {
@@ -439,30 +451,21 @@ a {
 
 .not-found {
   display: grid;
-  min-height: calc(100svh - 176px);
+  min-height: calc(100svh - 152px);
   align-content: center;
   justify-items: start;
   padding: 48px 0;
 }
 
-/* 시안의 수평 분산 정렬 푸터 */
+/* 푸터 비율 축소 */
 .site-footer {
-  min-height: 80px;
+  min-height: 72px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.68rem;       /* 0.72rem에서 0.68rem으로 축소 */
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.footer-links a {
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
-}
-
-.footer-links a:hover {
-  border-color: var(--muted);
 }
 
 @media (max-width: 768px) {
@@ -471,7 +474,7 @@ a {
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    padding: 24px 0;
+    padding: 20px 0;
     gap: 12px;
   }
 
@@ -492,12 +495,16 @@ a {
   .hero h1,
   .page-heading h1,
   .not-found h1 {
-    font-size: clamp(2.6rem, 12vw, 4rem);
+    font-size: clamp(2.4rem, 12vw, 3.8rem);
   }
 
   .approach-layout {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
   }
 
   .detail-aside {
@@ -505,96 +512,6 @@ a {
   }
   
   .product-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 탭 스위처 및 회사 설명 디자인 */
-.tab-navigation {
-  display: flex;
-  border-left: 1px solid var(--line);
-  border-right: 1px solid var(--line);
-  background: var(--surface);
-}
-
-.tab-trigger {
-  flex: 1;
-  min-height: 56px;
-  border: none;
-  border-bottom: 1px solid var(--line);
-  background: transparent;
-  color: var(--muted);
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  outline: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tab-trigger:first-child {
-  border-right: 1px solid var(--line);
-}
-
-.tab-trigger:hover {
-  color: var(--text);
-  background: var(--surface-muted);
-}
-
-.tab-trigger.active {
-  color: var(--text);
-  background: var(--surface);
-  border-bottom: 1px solid transparent;
-  font-weight: 800;
-}
-
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-.about-company-layout {
-  border-left: 1px solid var(--line);
-  border-right: 1px solid var(--line);
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1px;
-  background: var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.about-cell {
-  background: var(--surface);
-  padding: 48px;
-}
-
-.about-cell h3 {
-  margin: 0 0 16px;
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  color: var(--text);
-}
-
-.about-cell p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-  .about-grid {
     grid-template-columns: 1fr;
   }
 }
