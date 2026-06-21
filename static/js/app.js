@@ -42,20 +42,17 @@ const serviceButton = (service) => {
 };
 
 const productCard = (service) => `
-  <article class="product-card">
-    <img class="product-thumbnail" src="${escapeHtml(service.thumbnail)}" alt="">
+  <a class="product-card" href="${escapeHtml(service.detail_url)}">
+    <img class="product-thumbnail" src="${escapeHtml(service.thumbnail)}" alt="${escapeHtml(service.name)}">
     <div class="product-card-body">
-      <div class="product-card-header">
-        <h3>${escapeHtml(service.name)}</h3>
-        <span class="status">${escapeHtml(service.status)}</span>
+      <div class="product-card-meta-title">
+        0${service.order} / ${escapeHtml(service.name)}
       </div>
-      <p>${escapeHtml(service.tagline)}</p>
+      <div class="product-card-meta-desc">
+        (${escapeHtml(service.status)}, ${escapeHtml(service.tagline)})
+      </div>
     </div>
-    <div class="product-card-actions">
-      <a class="button" href="${escapeHtml(service.detail_url)}">상세보기</a>
-      ${serviceButton(service)}
-    </div>
-  </article>
+  </a>
 `;
 
 // CDN을 통해 marked 라이브러리를 동적 로드하여 마크다운을 HTML로 파싱하는 함수
