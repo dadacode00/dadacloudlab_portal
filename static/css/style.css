@@ -238,6 +238,7 @@ a {
 .service-meta p {
   margin: 14px 0 0;
   color: var(--muted);
+  white-space: pre-line;
 }
 
 .status {
