@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "stock",
+    "name": "Stock",
+    "status": "Private beta",
+    "tagline": "시장 데이터와 AI 분석을 결합한 투자 리서치 보조 서비스.",
+    "detail_url": "/services/stock/",
+    "service_url": "https://stock.dadacloudlab.com",
+    "thumbnail": "/static/images/services/stock.svg",
+    "order": 1
+  },
+  {
+    "slug": "motionlab",
+    "name": "MotionLab",
+    "status": "Beta",
+    "tagline": "기구 설계자를 위한 모션 설계 보조 플랫폼.",
+    "detail_url": "/services/motionlab/",
+    "service_url": "https://motion.dadacloudlab.com",
+    "thumbnail": "/static/images/services/motionlab.svg",
+    "order": 2
+  },
+  {
+    "slug": "circulus",
+    "name": "Circulus",
+    "status": "Planned",
+    "tagline": "macOS를 위한 가벼운 인터랙션 캐릭터 실험.",
+    "detail_url": "/services/circulus/",
+    "service_url": "https://circulus.dadacloudlab.com",
+    "thumbnail": "/static/images/services/circulus.svg",
+    "order": 3
+  }
+]

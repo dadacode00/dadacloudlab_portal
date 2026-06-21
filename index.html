@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dada Cloud Lab</title>
+    <meta
+      name="description"
+      content="Dada Cloud Lab is a minimal portal for products, experiments, and independent cloud services."
+    >
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Dada Cloud Lab home">Dada Cloud Lab</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/#products">Products</a>
+        <a href="/#lab">Lab</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Independent cloud products</p>
+        <h1>Dada Cloud Lab</h1>
+        <p class="hero-text">
+          브랜드 포털은 가볍게 유지하고, 실제 서비스는 각 서브도메인에서 독립적으로 운영합니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#products">Products</a>
+          <a class="button" href="#contact">Contact</a>
+        </div>
+      </section>
+
+      <section class="section" id="products">
+        <div class="section-heading">
+          <p class="eyebrow">Products</p>
+          <h2>Services</h2>
+        </div>
+        <div class="product-grid" data-services-list></div>
+      </section>
+
+      <section class="section lab-section" id="lab">
+        <div class="section-heading">
+          <p class="eyebrow">Lab</p>
+          <h2>Build small, ship clear.</h2>
+        </div>
+        <div class="lab-copy">
+          <p>
+            Dada Cloud Lab은 설계, 자동화, 데이터 분석, 인터랙션 도구를 작은 단위로 실험하고
+            실제 제품으로 분리해 운영합니다.
+          </p>
+          <p>
+            이 포털은 소개와 연결만 담당하며, 서비스 실행 환경은 각 제품 도메인에서 관리합니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>hello@dadacloudlab.com</h2>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Dada Cloud Lab</span>
+      <span>Static portal for Cloudflare Pages</span>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>

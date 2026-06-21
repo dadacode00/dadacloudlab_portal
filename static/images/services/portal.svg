@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">DadaCloudLab Portal thumbnail</title>
+  <desc id="desc">Abstract service portal tiles.</desc>
+  <rect width="1200" height="675" fill="#f7f5ef"/>
+  <rect x="96" y="88" width="1008" height="499" rx="28" fill="#ffffff" stroke="#d8d2c4" stroke-width="8"/>
+  <rect x="154" y="150" width="314" height="174" rx="20" fill="#176b5d"/>
+  <rect x="512" y="150" width="236" height="174" rx="20" fill="#f4cf5d"/>
+  <rect x="792" y="150" width="254" height="174" rx="20" fill="#d26a3c"/>
+  <rect x="154" y="370" width="414" height="118" rx="20" fill="#ebe7dc"/>
+  <rect x="612" y="370" width="434" height="118" rx="20" fill="#143c38"/>
+  <text x="192" y="262" fill="#ffffff" font-family="Arial, sans-serif" font-size="56" font-weight="800">Portal</text>
+  <text x="655" y="445" fill="#ffffff" font-family="Arial, sans-serif" font-size="46" font-weight="800">Services</text>
+</svg>
