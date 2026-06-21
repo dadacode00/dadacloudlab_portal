@@ -28,7 +28,7 @@
     "downloads": [
       {
         "platform": "macOS",
-        "url": "https://github.com/dadacode00/circulus/releases/latest"
+        "url": "https://github.com/dadacode00/circulus/releases/download/v1.0.0/Circulus-mac.zip"
       }
     ],
     "thumbnail": "/static/images/services/circulus.svg",
