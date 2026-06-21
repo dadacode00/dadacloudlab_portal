@@ -21,9 +21,44 @@
     </header>
 
     <main>
-       <!-- 시안처럼 군더더기 타이틀 없이 바로 그리드로 진입하는 구성 -->
+      <!-- 시안처럼 군더더기 타이틀 없이 바로 그리드로 진입하는 구성 -->
       <section class="section flush-top" id="products">
-        <div class="product-grid" data-services-list></div>
+        <!-- 탭 전환 내비게이션 -->
+        <div class="tab-navigation">
+          <button class="tab-trigger active" data-target="projects">PROJECTS</button>
+          <button class="tab-trigger" data-target="about-company">ABOUT DADA</button>
+        </div>
+
+        <!-- 탭 1: Projects 그리드 목록 -->
+        <div class="tab-content active" id="tab-projects">
+          <div class="product-grid" data-services-list></div>
+        </div>
+
+        <!-- 탭 2: 회사 소개 -->
+        <div class="tab-content" id="tab-about-company">
+          <div class="about-company-layout">
+            <div class="about-grid">
+              <div class="about-cell">
+                <h3>PHILOSOPHY</h3>
+                <p>
+                  우리는 정교한 설계와 단순한 아키텍처의 힘을 믿습니다. 복잡하고 무거운 엔터프라이즈 솔루션 대신, 독립된 기능을 가진 기민한 경량 서비스를 개발해 빠르게 검증합니다.
+                </p>
+              </div>
+              <div class="about-cell">
+                <h3>WHAT WE DO</h3>
+                <p>
+                  기구 모션 설계 보조 장치부터 시작해, AI 기반 투자 리서치 도구, 데스크톱 캐릭터 애플리케이션에 이르기까지 일상의 효율을 극대화하는 기발한 유틸리티를 설계하고 기동합니다.
+                </p>
+              </div>
+              <div class="about-cell">
+                <h3>HOW WE BUILD</h3>
+                <p>
+                  모든 제품은 최신 웹 기술과 Cloudflare의 엣지 인프라스트럭처를 결합해 가볍고 견고하게 구현됩니다. 이를 통해 전 세계 어디서나 지연 없는 사용자 경험을 보장합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- 시안 하단의 'OUR APPROACH' 레이아웃 모사 -->
