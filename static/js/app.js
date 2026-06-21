@@ -1,14 +1,25 @@
-const DATA_URL = "/data/services.json";
-
-const escapeHtml = (value) =>
-  String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-
 const serviceButton = (service) => {
+  if (Array.isArray(service.downloads) && service.downloads.length > 0) {
+    return service.downloads
+      .filter((download) => download && download.platform && download.url)
+      .map(
+        (download) => `
+      <a class="button primary" href="${escapeHtml(download.url)}" target="_blank" rel="noopener">
+        Download for ${escapeHtml(download.platform)}
+      </a>
+    `,
+      )
+      .join("");
+  }
+
+  if (service.download_url) {
+    return `
+      <a class="button primary" href="${escapeHtml(service.download_url)}" target="_blank" rel="noopener">
+        Download for macOS
+      </a>
+    `;
+  }
+
   if (!service.service_url) {
     return '<span class="button disabled" aria-disabled="true">서비스 바로가기</span>';
   }
@@ -19,155 +30,3 @@ const serviceButton = (service) => {
     </a>
   `;
 };
-
-const productCard = (service) => `
-  <article class="product-card">
-    <img class="product-thumbnail" src="${escapeHtml(service.thumbnail)}" alt="">
-    <div class="product-card-body">
-      <div class="product-card-header">
-        <h3>${escapeHtml(service.name)}</h3>
-        <span class="status">${escapeHtml(service.status)}</span>
-      </div>
-      <p>${escapeHtml(service.tagline)}</p>
-    </div>
-    <div class="product-card-actions">
-      <a class="button" href="${escapeHtml(service.detail_url)}">상세보기</a>
-      ${serviceButton(service)}
-    </div>
-  </article>
-`;
-
-const inlineMarkdown = (line) =>
-  escapeHtml(line)
-    .replace(/`([^`]+)`/g, "<code>$1</code>")
-    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-
-const markdownToHtml = (markdown) => {
-  const lines = markdown.split(/\r?\n/);
-  const html = [];
-  let listOpen = false;
-  let paragraph = [];
-
-  const closeParagraph = () => {
-    if (paragraph.length > 0) {
-      html.push(`<p>${inlineMarkdown(paragraph.join(" "))}</p>`);
-      paragraph = [];
-    }
-  };
-
-  const closeList = () => {
-    if (listOpen) {
-      html.push("</ul>");
-      listOpen = false;
-    }
-  };
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-
-    if (!trimmed) {
-      closeParagraph();
-      closeList();
-      continue;
-    }
-
-    if (trimmed.startsWith("# ")) {
-      closeParagraph();
-      closeList();
-      html.push(`<h1>${inlineMarkdown(trimmed.slice(2))}</h1>`);
-      continue;
-    }
-
-    if (trimmed.startsWith("## ")) {
-      closeParagraph();
-      closeList();
-      html.push(`<h2>${inlineMarkdown(trimmed.slice(3))}</h2>`);
-      continue;
-    }
-
-    if (trimmed.startsWith("- ")) {
-      closeParagraph();
-      if (!listOpen) {
-        html.push("<ul>");
-        listOpen = true;
-      }
-      html.push(`<li>${inlineMarkdown(trimmed.slice(2))}</li>`);
-      continue;
-    }
-
-    paragraph.push(trimmed);
-  }
-
-  closeParagraph();
-  closeList();
-  return html.join("");
-};
-
-const loadServices = async () => {
-  const response = await fetch(DATA_URL);
-  if (!response.ok) {
-    throw new Error("Unable to load services.json");
-  }
-
-  return (await response.json()).sort((a, b) => a.order - b.order);
-};
-
-const renderServiceLists = async () => {
-  const containers = document.querySelectorAll("[data-services-list]");
-  if (containers.length === 0) {
-    return;
-  }
-
-  const services = await loadServices();
-  const cards = services.map(productCard).join("");
-  containers.forEach((container) => {
-    container.innerHTML = cards;
-  });
-};
-
-const renderServiceDetail = async () => {
-  const detailRoot = document.querySelector("[data-service-detail]");
-  const slug = document.body.dataset.serviceSlug;
-
-  if (!detailRoot || !slug) {
-    return;
-  }
-
-  const services = await loadServices();
-  const service = services.find((item) => item.slug === slug);
-
-  if (!service) {
-    detailRoot.innerHTML = `
-      <section class="not-found">
-        <p class="eyebrow">404</p>
-        <h1>Service not found</h1>
-        <a class="button primary" href="/services/">Products</a>
-      </section>
-    `;
-    return;
-  }
-
-  const markdownResponse = await fetch(`/content/services/${slug}.md`);
-  const markdown = markdownResponse.ok ? await markdownResponse.text() : "# Service\n\nContent is not available yet.";
-
-  detailRoot.innerHTML = `
-    <article class="detail-layout">
-      <aside class="detail-aside">
-        <img class="detail-thumbnail" src="${escapeHtml(service.thumbnail)}" alt="">
-        <div class="service-meta">
-          <span class="status">${escapeHtml(service.status)}</span>
-          <h1>${escapeHtml(service.name)}</h1>
-          <p>${escapeHtml(service.tagline)}</p>
-        </div>
-        <div class="detail-actions">
-          <a class="button" href="/services/">Products</a>
-          ${serviceButton(service)}
-        </div>
-      </aside>
-      <div class="markdown-body">${markdownToHtml(markdown)}</div>
-    </article>
-  `;
-};
-
-renderServiceLists().catch((error) => console.error(error));
-renderServiceDetail().catch((error) => console.error(error));

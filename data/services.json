@@ -25,7 +25,12 @@
     "status": "Planned",
     "tagline": "macOS를 위한 가벼운 인터랙션 캐릭터 실험.",
     "detail_url": "/services/circulus/",
-    "service_url": "https://circulus.dadacloudlab.com",
+    "downloads": [
+      {
+        "platform": "macOS",
+        "url": "https://github.com/dadacode00/circulus/releases/latest"
+      }
+    ],
     "thumbnail": "/static/images/services/circulus.svg",
     "order": 3
   }
