@@ -9,6 +9,7 @@ Stock은 시장 데이터를 정리하고 AI 분석을 덧붙여 투자 리서�
 - 기업/시장 뉴스 흐름 정리
 - 분석 아이디어와 리스크 요약
 
-## Access
+## Status
 
-현재는 Private beta로 운영합니다. 실제 서비스는 `stock.dadacloudlab.com`에서 독립적으로 관리합니다.
+현재는 Planned / Test 단계입니다. 
+배포 방식, 사업화 구상 중입니다.
