@@ -58,70 +58,19 @@ const productCard = (service) => `
   </article>
 `;
 
-const inlineMarkdown = (line) =>
-  escapeHtml(line)
-    .replace(/`([^`]+)`/g, "<code>$1</code>")
-    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-
-const markdownToHtml = (markdown) => {
-  const lines = markdown.split(/\r?\n/);
-  const html = [];
-  let listOpen = false;
-  let paragraph = [];
-
-  const closeParagraph = () => {
-    if (paragraph.length > 0) {
-      html.push(`<p>${inlineMarkdown(paragraph.join(" "))}</p>`);
-      paragraph = [];
-    }
-  };
-
-  const closeList = () => {
-    if (listOpen) {
-      html.push("</ul>");
-      listOpen = false;
-    }
-  };
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-
-    if (!trimmed) {
-      closeParagraph();
-      closeList();
-      continue;
-    }
-
-    if (trimmed.startsWith("# ")) {
-      closeParagraph();
-      closeList();
-      html.push(`<h1>${inlineMarkdown(trimmed.slice(2))}</h1>`);
-      continue;
-    }
-
-    if (trimmed.startsWith("## ")) {
-      closeParagraph();
-      closeList();
-      html.push(`<h2>${inlineMarkdown(trimmed.slice(3))}</h2>`);
-      continue;
-    }
-
-    if (trimmed.startsWith("- ")) {
-      closeParagraph();
-      if (!listOpen) {
-        html.push("<ul>");
-        listOpen = true;
-      }
-      html.push(`<li>${inlineMarkdown(trimmed.slice(2))}</li>`);
-      continue;
-    }
-
-    paragraph.push(trimmed);
+// CDN을 통해 marked 라이브러리를 동적 로드하여 마크다운을 HTML로 파싱하는 함수
+const convertMarkdownToHtml = async (markdown) => {
+  if (typeof marked === "undefined") {
+    await new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/marked/marked.min.js";
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = () => reject(new Error("Failed to load marked library"));
+      document.head.appendChild(script);
+    });
   }
-
-  closeParagraph();
-  closeList();
-  return html.join("");
+  return marked.parse(markdown);
 };
 
 const loadServices = async () => {
@@ -171,6 +120,15 @@ const renderServiceDetail = async () => {
   const markdownResponse = await fetch(`/content/services/${slug}.md`);
   const markdown = markdownResponse.ok ? await markdownResponse.text() : "# Service\n\nContent is not available yet.";
 
+  let htmlContent = "";
+  try {
+    htmlContent = await convertMarkdownToHtml(markdown);
+  } catch (error) {
+    console.error(error);
+    // 실패 시 일반 텍스트로 처리
+    htmlContent = `<pre>${escapeHtml(markdown)}</pre>`;
+  }
+
   detailRoot.innerHTML = `
     <article class="detail-layout">
       <aside class="detail-aside">
@@ -185,7 +143,7 @@ const renderServiceDetail = async () => {
           ${serviceButton(service)}
         </div>
       </aside>
-      <div class="markdown-body">${markdownToHtml(markdown)}</div>
+      <div class="markdown-body">${htmlContent}</div>
     </article>
   `;
 };
