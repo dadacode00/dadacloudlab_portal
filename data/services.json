@@ -22,13 +22,13 @@
   {
     "slug": "circulus",
     "name": "Circulus",
-    "status": "Planned",
-    "tagline": "퀵 액세스 런처. 자주 사용하는 앱과 웹사이트를 빠르게 이동.",
+    "status": "Beta",
+    "tagline": "퀵 액세스 런처.\n 자주 사용하는 앱과 웹사이트를 빠르게 이동.",
     "detail_url": "/services/circulus/",
     "downloads": [
       {
         "platform": "macOS",
-        "url": "https://github.com/dadacode00/circulus/releases/download/v1.0.0/Circulus-mac.zip"
+        "url": ""
       }
     ],
     "thumbnail": "/static/images/services/circulus.svg",
