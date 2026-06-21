@@ -33,5 +33,14 @@
     ],
     "thumbnail": "/static/images/services/circulus.svg",
     "order": 3
+  },
+  {
+    "slug": "gearmaker",
+    "name": "Gear Maker",
+    "status": "Planned",
+    "tagline": "gear design and simulation tool for mechanical engineers.",
+    "detail_url": "/services/gearmaker/",
+    "thumbnail": "/static/images/services/gearmaker.png",
+    "order": 4
   }
 ]
