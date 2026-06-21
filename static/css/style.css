@@ -364,11 +364,13 @@ a {
 
 .detail-thumbnail {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
+  aspect-ratio: auto;
   border: 1px solid var(--line);
   border-radius: 0px;
-  object-fit: cover;
+  object-fit: contain;
   background: var(--surface-muted);
+  display: block;
 }
 
 .service-meta {
