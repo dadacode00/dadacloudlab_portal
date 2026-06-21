@@ -42,17 +42,26 @@ const serviceButton = (service) => {
 };
 
 const productCard = (service) => `
-  <a class="product-card" href="${escapeHtml(service.detail_url)}">
-    <img class="product-thumbnail" src="${escapeHtml(service.thumbnail)}" alt="${escapeHtml(service.name)}">
+  <article class="product-card">
+    <a href="${escapeHtml(service.detail_url)}">
+      <img class="product-thumbnail" src="${escapeHtml(service.thumbnail)}" alt="${escapeHtml(service.name)}">
+    </a>
     <div class="product-card-body">
-      <div class="product-card-meta-title">
-        0${service.order} / ${escapeHtml(service.name)}
+      <div class="product-card-meta-header">
+        <a class="product-card-meta-title" href="${escapeHtml(service.detail_url)}">
+          0${service.order} / ${escapeHtml(service.name)}
+        </a>
+        ${service.status ? `<span class="status">${escapeHtml(service.status)}</span>` : ""}
       </div>
       <div class="product-card-meta-desc">
-        (${escapeHtml(service.status)}, ${escapeHtml(service.tagline)})
+        ${escapeHtml(service.tagline)}
       </div>
     </div>
-  </a>
+    <div class="product-card-actions">
+      <a class="button" href="${escapeHtml(service.detail_url)}">상세보기</a>
+      ${serviceButton(service)}
+    </div>
+  </article>
 `;
 
 // CDN을 통해 marked 라이브러리를 동적 로드하여 마크다운을 HTML로 파싱하는 함수

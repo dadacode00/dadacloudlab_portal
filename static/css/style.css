@@ -230,14 +230,9 @@ a {
   display: flex;
   min-height: 100%;
   flex-direction: column;
-  text-decoration: none;
-  color: inherit;
+  border: none;
+  border-radius: 0px; /* 직각 디자인 */
   background: var(--surface);
-  transition: opacity 0.25s ease;
-}
-
-.product-card:hover {
-  opacity: 0.82;
 }
 
 .product-thumbnail {
@@ -247,11 +242,23 @@ a {
   background: var(--surface-muted);
   border-bottom: 1px solid var(--line);
   display: block;
+  transition: opacity 0.25s ease;
+}
+
+.product-card:hover .product-thumbnail {
+  opacity: 0.88;
 }
 
 .product-card-body {
-  padding: 24px;
+  padding: 28px;
   flex: 1;
+}
+
+.product-card-meta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .product-card-meta-title {
@@ -260,13 +267,21 @@ a {
   color: var(--text);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 6px;
+  margin-bottom: 0 !important;
 }
 
 .product-card-meta-desc {
   font-size: 0.82rem;
   color: var(--muted);
-  line-height: 1.4;
+  line-height: 1.5;
+}
+
+.product-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 28px 28px 28px;
+  margin-top: auto; /* 내용 길이에 상관없이 버튼들을 카드 최하단에 고정 */
 }
 
 .status {
