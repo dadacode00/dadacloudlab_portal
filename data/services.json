@@ -28,7 +28,7 @@
     "downloads": [
       {
         "platform": "macOS",
-        "url": ""
+        "url": " "
       }
     ],
     "thumbnail": "/static/images/services/circulus.svg",
@@ -37,10 +37,11 @@
   {
     "slug": "gearmaker",
     "name": "Gear Maker",
-    "status": "Planned",
+    "status": "Beta",
     "tagline": "gear design and simulation tool for mechanical engineers.",
     "detail_url": "/services/gearmaker/",
     "thumbnail": "/static/images/services/gearmaker.png",
+    "service_url": "https://gear.dadacloudlab.com",
     "order": 4
   }
 ]
