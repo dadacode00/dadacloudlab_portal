@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Open WebUI</title>
+  <desc id="desc">Minimal card for the Open WebUI service.</desc>
+  <rect width="960" height="540" fill="#f7f7f5"/>
+  <rect x="40" y="40" width="880" height="460" rx="0" fill="#ffffff" stroke="#e2e2df" stroke-width="2"/>
+  <rect x="72" y="72" width="816" height="36" fill="#131313"/>
+  <circle cx="98" cy="90" r="8" fill="#f7f7f5"/>
+  <circle cx="126" cy="90" r="8" fill="#f7f7f5"/>
+  <circle cx="154" cy="90" r="8" fill="#f7f7f5"/>
+  <text x="188" y="96" fill="#f7f7f5" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Open WebUI</text>
+  <rect x="84" y="152" width="340" height="280" rx="0" fill="#f1f1ee" stroke="#e2e2df"/>
+  <rect x="444" y="152" width="430" height="56" rx="0" fill="#131313"/>
+  <text x="468" y="188" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Local AI Workspace</text>
+  <path d="M480 250h280M480 286h320M480 322h240M480 358h290" stroke="#d7d7d2" stroke-width="10" stroke-linecap="square"/>
+  <rect x="444" y="404" width="188" height="36" rx="0" fill="#2e6ff2"/>
+  <text x="468" y="428" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">127.0.0.1:3050</text>
+  <rect x="660" y="404" width="214" height="36" rx="0" fill="#10b981"/>
+  <text x="684" y="428" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Docker Compose</text>
+  <text x="112" y="208" fill="#131313" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">Chat UI</text>
+  <text x="112" y="248" fill="#747472" font-family="Inter, Arial, sans-serif" font-size="18">Local model control</text>
+  <path d="M116 312h248M116 348h180M116 384h220" stroke="#c9c9c4" stroke-width="8" stroke-linecap="square"/>
+</svg>
