@@ -120,7 +120,6 @@ const renderServiceDetail = async () => {
       <section class="not-found">
         <p class="eyebrow">404</p>
         <h1>Service not found</h1>
-        <a class="button primary" href="/services/">Products</a>
       </section>
     `;
     return;
@@ -148,7 +147,6 @@ const renderServiceDetail = async () => {
           <p>${escapeHtml(service.tagline)}</p>
         </div>
         <div class="detail-actions">
-          <a class="button" href="/services/">Products</a>
           ${serviceButton(service)}
         </div>
       </aside>

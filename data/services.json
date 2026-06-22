@@ -2,7 +2,7 @@
   {
     "slug": "stock",
     "name": "Stock",
-    "status": "Private beta",
+    "status": "Private Service",
     "tagline": "시장 데이터와 AI 분석을 결합한 투자 리서치 보조 서비스.",
     "detail_url": "/services/stock/",
     "service_url": "https://stock.dadacloudlab.com",
@@ -40,14 +40,14 @@
     "status": "Beta",
     "tagline": "gear design and simulation tool for mechanical engineers.",
     "detail_url": "/services/gearmaker/",
-    "thumbnail": "/static/images/services/gearmaker.png",
+    "thumbnail": "/static/images/services/gearmaker.svg",
     "service_url": "https://gear.dadacloudlab.com",
     "order": 4
   },
   {
     "slug": "open-webui",
     "name": "Open WebUI",
-    "status": "Local",
+    "status": "Private Service",
     "tagline": "로컬 AI 대화와 모델 연결을 관리하는 웹 인터페이스.",
     "detail_url": "/services/open-webui/",
     "service_url": "http://127.0.0.1:3050",

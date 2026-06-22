@@ -1,11 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
   <title id="title">MotionLab thumbnail</title>
-  <desc id="desc">Abstract mechanical motion diagram.</desc>
-  <rect width="1200" height="675" fill="#143c38"/>
-  <circle cx="302" cy="338" r="116" fill="none" stroke="#f4cf5d" stroke-width="34"/>
-  <circle cx="596" cy="338" r="78" fill="none" stroke="#ffffff" stroke-width="28"/>
-  <circle cx="842" cy="338" r="138" fill="none" stroke="#d26a3c" stroke-width="34"/>
-  <path d="M410 338h108m156 0h30" stroke="#ffffff" stroke-width="28" stroke-linecap="round"/>
-  <path d="M744 242l194 194M938 242 744 436" stroke="#f4cf5d" stroke-width="22" stroke-linecap="round"/>
-  <text x="76" y="598" fill="#f8faf7" font-family="Arial, sans-serif" font-size="72" font-weight="800">MotionLab</text>
+  <desc id="desc">Light mechanical motion diagram.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f6f1"/>
+      <stop offset="100%" stop-color="#ede9df"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.4" stroke="#d8d1c4" stroke-width="1">
+    <path d="M0 112h1200M0 224h1200M0 336h1200M0 448h1200M0 560h1200"/>
+    <path d="M120 0v675M240 0v675M360 0v675M480 0v675M600 0v675M720 0v675M840 0v675M960 0v675M1080 0v675"/>
+  </g>
+  <rect x="56" y="56" width="1088" height="563" fill="#ffffff" stroke="#d9d2c7"/>
+  <text x="92" y="150" fill="#131313" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="800">MotionLab</text>
+  <text x="96" y="190" fill="#747472" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="0.08em">MECHANICAL MOTION DESIGN</text>
+  <circle cx="318" cy="362" r="104" fill="none" stroke="#131313" stroke-width="28"/>
+  <circle cx="598" cy="362" r="74" fill="none" stroke="#2e6ff2" stroke-width="22"/>
+  <circle cx="840" cy="362" r="122" fill="none" stroke="#10b981" stroke-width="28"/>
+  <path d="M422 362h110m132 0h30" stroke="#131313" stroke-width="22" stroke-linecap="round"/>
+  <path d="M720 272l156 156M876 272 720 428" stroke="#f4cf5d" stroke-width="18" stroke-linecap="round"/>
 </svg>

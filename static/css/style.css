@@ -237,7 +237,7 @@ a {
 
 .product-thumbnail {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 8.5;
   object-fit: cover;
   background: var(--surface-muted);
   border-bottom: 1px solid var(--line);
@@ -250,7 +250,7 @@ a {
 }
 
 .product-card-body {
-  padding: 28px;
+  padding: 20px 20px 16px;
   flex: 1;
 }
 
@@ -280,7 +280,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 0 28px 28px 28px;
+  padding: 0 20px 20px;
   margin-top: auto; /* 내용 길이에 상관없이 버튼들을 카드 최하단에 고정 */
 }
 
@@ -420,6 +420,15 @@ a {
   opacity: 0.85;
   font-size: 1.05rem;
   line-height: 1.7;
+}
+
+.markdown-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 24px 0;
+  border: 1px solid var(--line);
+  background: var(--surface-muted);
 }
 
 .markdown-body ul {
