@@ -48,7 +48,7 @@
     "slug": "open-webui",
     "name": "Open WebUI",
     "status": "Private Service",
-    "tagline": "로컬 AI 대화와 모델 연결을 관리하는 웹 인터페이스.",
+    "tagline": "로컬 AI 웹 인터페이스.",
     "detail_url": "/services/open-webui/",
     "service_url": "http://ai.dadacloudlab.com",
     "thumbnail": "/static/images/services/open-webui.svg",
